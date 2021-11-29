@@ -42,7 +42,7 @@ public class WheelView extends View {
         FILL, WRAP, CIRCLE
     }
 
-    private static final String[] TIME_NUM = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09"};
+    private static final String[] TIME_NUM = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
     private DividerType dividerType;//分隔线类型
 
@@ -435,8 +435,11 @@ public class WheelView extends View {
             float radius = Math.max((endX - startX), itemHeight) / 1.8f;
             canvas.drawCircle(measuredWidth / 2f, measuredHeight / 2f, radius, paintIndicator);
         } else {
-            canvas.drawLine(0.0F, firstLineY, measuredWidth, firstLineY, paintIndicator);
-            canvas.drawLine(0.0F, secondLineY, measuredWidth, secondLineY, paintIndicator);
+//            canvas.drawLine(0.0F, firstLineY, measuredWidth, firstLineY, paintIndicator);
+//            canvas.drawLine(0.0F, secondLineY, measuredWidth, secondLineY, paintIndicator);
+
+            canvas.drawRect(0.0F,firstLineY,measuredWidth,secondLineY,paintIndicator);
+
         }
 
         //只显示选中项Label文字的模式，并且Label文字不为空，则进行绘制
